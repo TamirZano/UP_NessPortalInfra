@@ -1,12 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="בחירת_מודול" this:בחירת_מודול.SubSystem="Help Desk" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="בחירת_מודול" this:בחירת_מודול.SubSystem="Help Desk" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="SubSystem" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>592,766.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1202,958</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="56">
+    <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -35,8 +35,8 @@
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Reflection</x:String>
-      <x:String>System.Linq.Expressions</x:String>
-    </scg:List>
+      <x:String>System.IO</x:String>
+    </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <scg:List x:TypeArguments="AssemblyReference" Capacity="72">
@@ -76,41 +76,32 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="בחירת_מודול" sap:VirtualizedContainerService.HintSize="496,701.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="בחירת_מודול" sap:VirtualizedContainerService.HintSize="496,777" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Ness Place - דף הבית" sap:VirtualizedContainerService.HintSize="433.6,589.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cf85bd86-1873-4766-bf12-38a38092c2ad" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Ness Place - דף הבית" sap:VirtualizedContainerService.HintSize="434,655" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="cf85bd86-1873-4766-bf12-38a38092c2ad" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,372.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Name="A" />
-            </Sequence.Variables>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,428" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="337.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_1">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">A</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">s</InArgument>
-              </Assign.Value>
-            </Assign>
-            <uix:NClick ClickType="Single" DisplayName="Click 'TIK TAK'" sap:VirtualizedContainerService.HintSize="337.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf85bd86-1873-4766-bf12-38a38092c2ad" Version="V3">
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="338,98" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="test1" />
+            <uix:NClick ClickType="Single" DisplayName="Click 'TIK TAK'" sap:VirtualizedContainerService.HintSize="338,167" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf85bd86-1873-4766-bf12-38a38092c2ad" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://homeil.ness.com/israel/Pages/home.aspx" DesignTimeRectangle="1795, 712, 243, 60" DesignTimeScaleFactor="2.5" ElementType="Text" FriendlyName="'TIK TAK'" Guid="fee68959-4bd5-47e1-afce-2b7fdd0a4d87" ImageBase64="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" InformativeScreenshot="264f00db4c47b54cd18339078b763a08.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Ness Place - דף הבית' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
                   <uix:TargetAnchorable.FullSelectorArgument>
